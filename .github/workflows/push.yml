@@ -1,1 +1,47 @@
+name: Tus_Clases_Automatic_MSG
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+jobs:
+  build-tusclases-latest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2.0.0
+      with:
+        python-version: '3.7'
+      run: |
+        echo pwd
+
+    - name: Install Requirements
+      run: pip install -r requirements.txt
+      working-directory: ./app
+
+    - name: Prepare Selenium
+      uses: nanasess/setup-chromedriver@master
+
+    - name: Start XVBF
+      run: |
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional, disables headless mode
+
+    - name: Execute main.py
+      run: main.py
+      working-directory: ./app
+      env:
+        TUS_CLASES_USER: ${{secrets.TUS_CLASES_USER}}
+        TUS_CLASES_PASSWORD: ${{secrets.TUS_CLASES_PASSWORD}}
+        GMAIL_USER: ${{secrets.GMAIL_USER}}
+        GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
+        DISPLAY: :99
+
 
