@@ -3,7 +3,6 @@ name: Tus_Clases_Automatic_MSG
 on: push
   #schedule:
   #  - cron: "0 */4 * * *"
-  workflow_dispatch:
 
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
