@@ -35,7 +35,7 @@ jobs:
     - name: Debugging 0
       env:
         TUSCLASES: ${{secrets.TUS_CLASES_USER}}
-      if: env.TUSCLASES == "carlosperezchemeng@gmailcom"
+      if: env.TUSCLASES == 'carlosperezchemeng@gmailcom'
       run: echo "Is getting env variable"
 
     - name: Start XVBF
