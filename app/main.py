@@ -23,6 +23,8 @@ password_tus_clases = str(os.getenv("TUS_CLASES_PASSWORD"))
 user_gmail = str(os.getenv("GMAIL_USER"))
 password_gmail = str(os.getenv("GMAIL_PASSWORD"))
 
+print(user_tus_clases, password_tus_clases)
+
 if None in [user_tus_clases, password_tus_clases, user_gmail, password_gmail]:
   raise ValueError("Environments variables are not valid.")
   
