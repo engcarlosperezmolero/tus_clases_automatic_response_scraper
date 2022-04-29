@@ -21,10 +21,10 @@ jobs:
         python-version: '3.7'
 
     - name: Retrieve secret
-        env:
-          super_secret: ${{ secrets.TUS_CLASES_PASSWORD }}
-        run: |
-          example-command "$super_secret"
+      env:
+        super_secret: ${{ secrets.TUS_CLASES_PASSWORD }}
+      run: |
+        example-command "$super_secret"
 
     - name: Install Requirements
       run: pip install -r requirements.txt
