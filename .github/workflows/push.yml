@@ -42,7 +42,7 @@ jobs:
         sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional, disables headless mode
 
     - name: Execute main.py
-      run: main.py
+      run: python3 main.py
       working-directory: ./app
       env:
         TUS_CLASES_USER: ${{secrets.TUS_CLASES_USER}}
