@@ -20,7 +20,7 @@ jobs:
       with:
         python-version: '3.7'
 
-    - name: Debugging
+    - name: Debugging 0
       run: |
         pwd
         ls -a .
@@ -31,6 +31,11 @@ jobs:
 
     - name: Prepare Selenium
       uses: nanasess/setup-chromedriver@master
+    
+    - name: Debugging 0
+      run: |
+        pwd
+        ls -a .
 
     - name: Start XVBF
       run: |
