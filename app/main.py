@@ -23,9 +23,10 @@ password_tus_clases = str(os.getenv("TUS_CLASES_PASSWORD"))
 user_gmail = str(os.getenv("GMAIL_USER"))
 password_gmail = str(os.getenv("GMAIL_PASSWORD"))
 
-print(f"Environmen variables: {user_tus_clases} and {password_tus_clases} ")
+env_var_none = None in [user_tus_clases, password_tus_clases, user_gmail, password_gmail]
+env_var_empty = "" in [user_tus_clases, password_tus_clases, user_gmail, password_gmail]
 
-if None in [user_tus_clases, password_tus_clases, user_gmail, password_gmail]:
+if env_var_none or env_var_empty:
   raise ValueError("Environments variables are not valid.")
   
 
