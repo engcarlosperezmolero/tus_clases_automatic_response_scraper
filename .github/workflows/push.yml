@@ -34,7 +34,7 @@ jobs:
     
     - name: Debugging 0
       env:
-        TUSCLASES: ${{secrets.TUS_CLASES_USER}}
+        TUSCLASES: ${{ secrets.TUS_CLASES_USER }}
       if: env.TUSCLASES == 'carlosperezchemeng@gmailcom'
       run: echo "Is getting env variable"
 
@@ -46,8 +46,8 @@ jobs:
       run: python3 main.py
       working-directory: ./app
       env:
-        TUS_CLASES_USER: ${{secrets.TUS_CLASES_USER}}
-        TUS_CLASES_PASSWORD: ${{secrets.TUS_CLASES_PASSWORD}}
-        GMAIL_USER: ${{secrets.GMAIL_USER}}
-        GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
+        TUS_CLASES_USER: ${{ secrets.TUS_CLASES_USER }}
+        TUS_CLASES_PASSWORD: ${{ secrets.TUS_CLASES_PASSWORD }}
+        GMAIL_USER: ${{ secrets.GMAIL_USER }}
+        GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
         DISPLAY: :99
