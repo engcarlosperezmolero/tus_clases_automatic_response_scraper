@@ -24,7 +24,7 @@ jobs:
       env:
         super_secret: ${{ secrets.TUS_CLASES_PASSWORD }}
       run: |
-        example-command "$super_secret"
+        echo "$super_secret"
 
     - name: Install Requirements
       run: pip install -r requirements.txt
