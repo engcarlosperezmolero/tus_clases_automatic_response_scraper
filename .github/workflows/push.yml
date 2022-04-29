@@ -21,7 +21,9 @@ jobs:
         python-version: '3.7'
 
     - name: Debugging
-      run: pwd
+      run: |
+        pwd
+        ls -a .
 
     - name: Install Requirements
       run: pip install -r requirements.txt
