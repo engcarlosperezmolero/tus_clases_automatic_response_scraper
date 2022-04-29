@@ -20,12 +20,6 @@ jobs:
       with:
         python-version: '3.7'
 
-    - name: Retrieve secret
-      env:
-        super_secret: ${{ secrets.TUS_CLASES_PASSWORD }}
-      run: |
-        echo "$super_secret"
-
     - name: Install Requirements
       run: pip install -r requirements.txt
       working-directory: ./app
