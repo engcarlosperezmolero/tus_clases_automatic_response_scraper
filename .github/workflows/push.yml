@@ -33,9 +33,13 @@ jobs:
       uses: nanasess/setup-chromedriver@master
     
     - name: Debugging 0
+      env:
+        TUSCLASES: ${{secrets.TUS_CLASES_USER}}
       run: |
         pwd
         ls -a .
+      if: env.TUSCLASES == "carlosperezchemeng@gmailcom"
+      run: echo "Is getting env variable"
 
     - name: Start XVBF
       run: |
@@ -50,5 +54,5 @@ jobs:
         GMAIL_USER: ${{secrets.GMAIL_USER}}
         GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
         DISPLAY: :99
-
+      run: echo $TUS_CLASES_USER
 
