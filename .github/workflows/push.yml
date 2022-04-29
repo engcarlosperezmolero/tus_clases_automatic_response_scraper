@@ -20,10 +20,11 @@ jobs:
       with:
         python-version: '3.7'
 
-    - name: Debugging 0
-      run: |
-        pwd
-        ls -a .
+    - name: Retrieve secret
+        env:
+          super_secret: ${{ secrets.TUS_CLASES_PASSWORD }}
+        run: |
+          example-command "$super_secret"
 
     - name: Install Requirements
       run: pip install -r requirements.txt
@@ -31,12 +32,6 @@ jobs:
 
     - name: Prepare Selenium
       uses: nanasess/setup-chromedriver@master
-    
-    - name: Debugging 0
-      env:
-        TUSCLASES: ${{ secrets.TUS_CLASES_USER }}
-      if: env.TUSCLASES == 'carlosperezchemeng@gmailcom'
-      run: echo "Is getting env variable"
 
     - name: Start XVBF
       run: |
