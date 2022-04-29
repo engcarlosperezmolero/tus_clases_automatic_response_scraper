@@ -54,5 +54,3 @@ jobs:
         GMAIL_USER: ${{secrets.GMAIL_USER}}
         GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
         DISPLAY: :99
-      run: echo $TUS_CLASES_USER
-
