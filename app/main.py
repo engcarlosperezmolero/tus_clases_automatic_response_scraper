@@ -36,7 +36,7 @@ def send_notifying_mail(names: list = None, mail_user: str = "", mail_password: 
         return None
 
     s = smtplib.SMTP(host='smtp.gmail.com', port=587)
-    message = f"Subject: TUS CLASES MENSAJE AUTOMATICO\n\nFollowing people ({len(names)}) have received the message: {', '.join(u)}."
+    message = f"Subject: TUS CLASES MENSAJE AUTOMATICO\n\nFollowing people ({len(names)}) have received the message: {', '.join(names)}."
     s.starttls()
     s.login(mail_user, mail_password)
     s.sendmail(mail_user, mail_user, message)
