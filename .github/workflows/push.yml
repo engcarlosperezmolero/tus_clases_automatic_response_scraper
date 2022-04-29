@@ -2,7 +2,7 @@ name: Tus_Clases_Automatic_MSG
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "* * * * *"
 
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
