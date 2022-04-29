@@ -18,10 +18,10 @@ options.add_argument('--user-agent=""Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 driver = webdriver.Chrome('chromedriver', options=options)
 
 
-user_tus_clases = os.getenv("TUS_CLASES_USER")
-password_tus_clases = os.getenv("TUS_CLASES_PASSWORD")
-user_gmail = os.getenv("GMAIL_USER")
-password_gmail = os.getenv("GMAIL_PASSWORD")
+user_tus_clases = str(os.getenv("TUS_CLASES_USER"))
+password_tus_clases = str(os.getenv("TUS_CLASES_PASSWORD"))
+user_gmail = str(os.getenv("GMAIL_USER"))
+password_gmail = str(os.getenv("GMAIL_PASSWORD"))
 
 if None in [user_tus_clases, password_tus_clases, user_gmail, password_gmail]:
   raise ValueError("Environments variables are not valid.")
@@ -54,8 +54,8 @@ driver.set_window_size(4096, 2160)
 try:
     input_email = driver.find_element(by=By.XPATH, value="/html/body/div[2]/form/div[3]/div/div/div/div[2]/div[2]/div[1]/div[2]/div/div/div[1]/input")
     input_password = driver.find_element(by=By.XPATH, value="/html/body/div[2]/form/div[3]/div/div/div/div[2]/div[2]/div[1]/div[2]/div/div/div[2]/input")
-    input_email.send_keys(credentials.tus_clases_user)
-    input_password.send_keys(credentials.tus_clases_password + Keys.ENTER)
+    input_email.send_keys(user_tus_clases)
+    input_password.send_keys(password_tus_clases + Keys.ENTER)
     time.sleep(2)
     # driver.save_screenshot("screenshot_tusclases_1.png")
 
