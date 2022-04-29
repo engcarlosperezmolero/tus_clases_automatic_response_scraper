@@ -1,8 +1,8 @@
 name: Tus_Clases_Automatic_MSG
 
-on: push
-  #schedule:
-  #  - cron: "0 */4 * * *" # cada 4 horas
+on:
+  schedule:
+    - cron: "0 */4 * * *"
 
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
