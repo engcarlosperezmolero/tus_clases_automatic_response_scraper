@@ -10,3 +10,5 @@
 ![msg_auto](https://github.com/engcarlosperezmolero/tus_clases_automatic_response_scraper/blob/main/images/tusclases_msjauto.jpg)
 
 ### Descripcion
+
+[![Tus_Clases_Automatic_MSG](https://github.com/engcarlosperezmolero/tus_clases_automatic_response_scraper/actions/workflows/push.yml/badge.svg?event=schedule)](https://github.com/engcarlosperezmolero/tus_clases_automatic_response_scraper/actions/workflows/push.yml)
