@@ -2,7 +2,7 @@
   <summary><h2>Automatic response service using Python and Selenium <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" style="width:1em;"/></h2></summary>
   
   ## Problem
-  Automatic response to messages from new users who write to the profile of the Tus Clases platform.
+  Automatic response to messages from new people who are interested in get my classes.
   
   ## How the service works?
   Using Selenium, a GET is requested on the url: https://www.tusclases.com.ar/area-profesores/messaging which asks for user's credentials. Then using web scraping techniques and my personal credentials it can log in. Once inside the account there's a logic that's responsible for reviewing latest messages and verifying if within the chats exists a message with my phone number, in case there is no automatic message it is then sent and in that case it will automatically send an email to my personal email that contains the number of people to whom the automatic message was sent and their respective names.
